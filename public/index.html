@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f3ed">
+<title>Mộc & Hơn — Chuyển Đổi Số</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+</div>
+<dialog id="auth">
+<div class="dhead">
+<h3 id="authTit   le">Đăng nhập</h3>
+<button class="x" data-close="auth">×</button>
+</div>
+<div class="dbody">
+<div class="tabs">
+<button class="tab active" data-tab="login">Đăng nhập</button>
+<button class="tab" data-tab="register">Tạo tài khoản</button>
+</div>
+<form id="authForm">
+<div class="field" id="nameWrap" hidden>
+<label>Tên hiển thị</label>
+<input id="name" autocomplete="name">
+</div>
+<div class="field">
+<label>Email</label>
+<input id="email" type="email" autocomplete="email" required>
+</div>
+<div class="field">
+<label>Mật khẩu</label>
+<input id="password" type="password" minlength="10" autocomplete="current-password" required>
+</div>
+<button class="btn wide" id="authSubmit">Đăng nhập</button>
+</form>
+<p class="muted">Mật khẩu được xử lý ở server; tài khoản quản trị không được hard-code.</p>
+<button class="soft wide" type="button" id="bootstrapOpen">Khởi tạo cửa hàng lần đầu</button>
+</div>
+</dialog>
+<dialog id="cart">
+<div class="dhead">
+<h3>Giỏ hàng</h3>
+<button class="x" data-close="cart">×</button>
+</div>
+<div class="dbody" id="cartBody">
+</div>
+</dialog>
+<dialog id="checkout">
+<div class="dhead">
+<h3>Thông tin nhận hàng</h3>
+<button class="x" data-close="checkout">×</button>
+</div>
+<div class="dbody">
+<form id="orderForm">
+<div class="field">
+<label>Họ tên</label>
+<input name="customer_name" required minlength="2">
+</div>
+<div class="field">
+<label>Số điện thoại</label>
+<input name="phone" required minlength="8">
+</div>
+<div class="field">
+<label>Địa chỉ</label>
+<textarea name="address" required minlength="8">
+</textarea>
+</div>
+<div class="field">
+<label>Ghi chú</label>
+<textarea name="note">
+</textarea>
+</div>
+<p class="muted">Đơn hàng tạo ở trạng thái chờ xác nhận. Thanh toán trực tuyến chưa được bật.</p>
+<button class="btn wide">Đặt hàng</button>
+</form>
+</div>
+</dialog>
+<dialog id="bootstrap">
+<div class="dhead">
+<h3>Tạo owner đầu tiên</h3>
+<button class="x" data-close="bootstrap">×</button>
+</div>
+<div class="dbody">
+<p class="muted">Chỉ mở một lần bằng BOOTSTRAP_SECRET cấu hình trên server.</p>
+<form id="bootstrapForm">
+<div class="field">
+<label>Email</label>
+<input name="email" type="email" required>
+</div>
+<div class="field">
+<label>Tên</label>
+<input name="name" required minlength="2">
+</div>
+<div class="field">
+<label>Mật khẩu (12 ký tự trở lên)</label>
+<input name="password" type="password" required minlength="12">
+</div>
+<div class="field">
+<label>Mã bootstrap</label>
+<input name="secret" type="password" required>
+</div>
+<button class="btn wide">Tạo owner</button>
+</form>
+</div>
+</dialog>
+<dialog id="productDialog">
+<div class="dhead">
+<h3 id="productTitle">Thêm sản phẩm</h3>
+<button class="x" data-close="productDialog">×</button>
+</div>
+<div class="dbody">
+<form id="productForm">
+<input type="hidden" name="id">
+<div class="field">
+<label>Tên sản phẩm</label>
+<input name="name" required minlength="2">
+</div>
+<div class="field">
+<label>Mô tả</label>
+<textarea name="description">
+</textarea>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div class="field">
+<label>Giá (₫)</label>
+<input name="price" type="number" min="0" required>
+</div>
+<div class="field">
+<label>Tồn kho</label>
+<input name="stock" type="number" min="0" required>
+</div>
+</div>
+<div class="field">
+<label>Danh mục</label>
+<input name="category" value="Khác">
+</div>
+<div class="field">
+<label>Ảnh tải lên R2 (tối đa 5 MB)</label>
+<input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+</div>
+<button class="btn wide">Lưu sản phẩm</button>
+</form>
+</div>
+</dialog>
+<div id="toast" class="toast" role="status">
+</div>
+<main id="appMain">
+</main>
+<script type="module" src="js/main.js">
+</script>
+</body>
+</html>

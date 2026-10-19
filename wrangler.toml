@@ -1,0 +1,28 @@
+﻿name = "chuyen-doi-so-shop"
+main = "src/worker.js"
+compatibility_date = "2026-10-19"
+
+[limits]
+cpu_ms = 1000
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "chuyen-doi-so-db"
+database_id = "d19ac5e4-ce7b-4bdf-b859-89a13506956f"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "chuyen-doi-so-images"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "0fa998264d404bdeaa07326a1961e542"
+
+[vars]
+APP_ENV = "production"

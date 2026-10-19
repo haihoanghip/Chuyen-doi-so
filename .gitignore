@@ -1,0 +1,18 @@
+﻿# Local environment and credentials
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Dependencies/build outputs
+node_modules/
+dist/
+build/
+.wrangler/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
